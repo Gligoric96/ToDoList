@@ -13,7 +13,7 @@ Questa lista tiene traccia delle attività da svolgere, dei miglioramenti futuri
 
 ## 🚧 Task in corso
 
-- [ ] Aggiungere metodi **PUT** e **DELETE** per Task.java @Gligoric96
+- [ ] Aggiungere metodi **PUT** e **DELETE** per Task.java @rick-manf
 
 ---
 
