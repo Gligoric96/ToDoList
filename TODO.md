@@ -18,6 +18,7 @@ Questa lista tiene traccia delle attività da svolgere, dei miglioramenti futuri
 ---
 
 ## 💡 Miglioramenti futuri
+- [ ] Aggiungere l'entity 'User'
 - [ ] Verifica e test con Postman
 - [ ] Implementare `LOGGER` nei service/controller
 - [ ] Utilizzare `@Value` per endpoint esterni
