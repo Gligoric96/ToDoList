@@ -9,12 +9,13 @@ Questa lista tiene traccia delle attività da svolgere, dei miglioramenti futuri
 - [x] Implementazione base dei DTO
 - [x] Integrazione Swagger (prima versione)
 - [x] Aggiunti metodi **PUT** e **DELETE** per Task.java @rick-manf
+- [x] Aggiunta `TaskNotFoundException` per gestire errori custom
+- [x] Implementato `GlobalExceptionHandler` con `@RestControllerAdvice`
 
 ---
 
 ## 🚧 Task in corso
-
-
+- [ ] Refactoring metodi `TaskService` per lanciare eccezioni custom invece di `ResponseStatusException`
 
 ---
 
@@ -38,9 +39,10 @@ Questa lista tiene traccia delle attività da svolgere, dei miglioramenti futuri
 
 ---
 
+### Ultimo Aggiornamento: 25/05 Manuel
 ### Ultimo Aggiornamento: 24/05 Riccardo
 
---- 
+---
 
 > 🔄 Sentiti libero di modificare, aggiornare o spostare le attività in base all’avanzamento.
 > Ricorda di avvisare il team quando aggiorni questo file, aggiungendo anche la data e il tuo nome a piè di pagina.

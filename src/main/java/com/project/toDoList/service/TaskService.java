@@ -1,6 +1,7 @@
 package com.project.toDoList.service;
 
 import com.project.toDoList.dto.TaskDTO;
+import com.project.toDoList.exception.TaskNotFoundException;
 import com.project.toDoList.mapper.TaskMapper;
 import com.project.toDoList.model.Task;
 import org.springframework.http.HttpStatus;
@@ -43,7 +44,7 @@ public class TaskService {
     public TaskDTO getTaskById(Long id) {
 
         Task task = taskRepository.findById(id)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Task non trovata!"));
+                .orElseThrow(() -> new TaskNotFoundException(id));
 
         return TaskMapper.toDTO(task);
     }
@@ -62,7 +63,7 @@ public class TaskService {
     public TaskDTO updateTask(Long id, TaskDTO taskDTO) {
 
         Task task = taskRepository.findById(id)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Task non trovata"));
+                .orElseThrow(() -> new TaskNotFoundException(id));
         task.setTitle(taskDTO.getTitle());
         task.setDescription(taskDTO.getDescription());
         task.setDueDate(taskDTO.getDueDate());
@@ -76,7 +77,7 @@ public class TaskService {
     public TaskDTO deleteTask(Long id) {
 
         Task task = taskRepository.findById(id)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Task non trovata"));
+                .orElseThrow(() -> new TaskNotFoundException(id));
 
         taskRepository.delete(task);
 
