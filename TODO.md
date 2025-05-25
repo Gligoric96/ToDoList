@@ -15,7 +15,6 @@ Questa lista tiene traccia delle attività da svolgere, dei miglioramenti futuri
 ---
 
 ## 🚧 Task in corso
-- [ ] Refactoring metodi `TaskService` per lanciare eccezioni custom invece di `ResponseStatusException`
 
 ---
 
