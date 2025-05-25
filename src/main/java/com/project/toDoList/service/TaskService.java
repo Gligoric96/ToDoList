@@ -9,6 +9,7 @@ import com.project.toDoList.repository.TaskRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -51,11 +52,35 @@ public class TaskService {
     //Crea Task
     public TaskDTO createTask(TaskDTO taskDTO) {
 
-        Task savedTask = taskRepository.save(TaskMapper.toEntity(taskDTO));
+        Task task = taskRepository.save(TaskMapper.toEntity(taskDTO));
 
-        return TaskMapper.toDTO(savedTask);
+        return TaskMapper.toDTO(task);
     }
 
 
+    //Aggiorna una Task
+    public TaskDTO updateTask(Long id, TaskDTO taskDTO) {
+
+        Task task = taskRepository.findById(id)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Task non trovata"));
+        task.setTitle(taskDTO.getTitle());
+        task.setDescription(taskDTO.getDescription());
+        task.setDueDate(taskDTO.getDueDate());
+        task.setCompleted(taskDTO.isCompleted());
+
+        taskRepository.save(task);
+
+        return TaskMapper.toDTO(task);
+    }
+
+    public TaskDTO deleteTask(Long id) {
+
+        Task task = taskRepository.findById(id)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Task non trovata"));
+
+        taskRepository.delete(task);
+
+        return TaskMapper.toDTO(task);
+    }
 
 }

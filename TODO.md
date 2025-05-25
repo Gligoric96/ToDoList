@@ -8,12 +8,13 @@ Questa lista tiene traccia delle attività da svolgere, dei miglioramenti futuri
 - [x] Collegamento repository GitHub
 - [x] Implementazione base dei DTO
 - [x] Integrazione Swagger (prima versione)
+- [x] Aggiunti metodi **PUT** e **DELETE** per Task.java @rick-manf
 
 ---
 
 ## 🚧 Task in corso
 
-- [ ] Aggiungere metodi **PUT** e **DELETE** per Task.java @rick-manf
+
 
 ---
 
