@@ -4,13 +4,10 @@ import com.project.toDoList.dto.TaskDTO;
 import com.project.toDoList.exception.TaskNotFoundException;
 import com.project.toDoList.mapper.TaskMapper;
 import com.project.toDoList.model.Task;
-import org.springframework.http.HttpStatus;
-import org.springframework.web.server.ResponseStatusException;
 import com.project.toDoList.repository.TaskRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -74,6 +71,8 @@ public class TaskService {
         return TaskMapper.toDTO(task);
     }
 
+
+    //Cancella Task
     public TaskDTO deleteTask(Long id) {
 
         Task task = taskRepository.findById(id)
