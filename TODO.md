@@ -11,6 +11,8 @@ Questa lista tiene traccia delle attività da svolgere, dei miglioramenti futuri
 - [x] Aggiunti metodi **PUT** e **DELETE** per Task.java @rick-manf
 - [x] Aggiunta `TaskNotFoundException` per gestire errori custom
 - [x] Implementato `GlobalExceptionHandler` con `@RestControllerAdvice`
+- [x] Dockerizzazione del progetto (per ora su branch a parte)
+
 
 ---
 
@@ -34,12 +36,7 @@ Questa lista tiene traccia delle attività da svolgere, dei miglioramenti futuri
 ## 🔍 Idee da valutare
 - [ ] Separazione modulo API vs. modulo logica (multi-modulo)
 - [ ] Deploy su server remoto o cloud
-- [ ] Dockerizzazione del progetto
 
----
-
-### Ultimo Aggiornamento: 25/05 Manuel
-### Ultimo Aggiornamento: 24/05 Riccardo
 
 ---
 
