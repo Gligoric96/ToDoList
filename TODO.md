@@ -12,6 +12,8 @@ Questa lista tiene traccia delle attività da svolgere, dei miglioramenti futuri
 - [x] Aggiunta `TaskNotFoundException` per gestire errori custom
 - [x] Implementato `GlobalExceptionHandler` con `@RestControllerAdvice`
 - [x] Dockerizzazione del progetto (per ora su branch a parte)
+- [x] Utilizzare `@Value` per endpoint esterni (vedi branch feature/externalService)
+
 
 
 ---
@@ -24,7 +26,6 @@ Questa lista tiene traccia delle attività da svolgere, dei miglioramenti futuri
 - [ ] Aggiungere l'entity 'User'
 - [ ] Verifica e test con Postman
 - [ ] Implementare `LOGGER` nei service/controller
-- [ ] Utilizzare `@Value` per endpoint esterni
 - [ ] Simulare chiamate HTTP esterne con **WireMock**
 - [ ] Personalizzare serializzazione JSON con `@JsonProperty`
 - [ ] Inserire test unitari e test di integrazione
