@@ -1,0 +1,25 @@
+Questo file serve per tenere traccia di quello che ho fatto in questo branch:
+
+Package: externalService
+
+Contesto:
+In questo branch (feature/externalService) sto sperimentando l'integrazione tra due applicazioni Spring Boot tramite chiamate HTTP.
+
+Obiettivo:
+Simulare la comunicazione tra microservizi:
+- La TaskApp (main) effettua una chiamata HTTP verso
+- Una seconda applicazione Spring Boot (external) che risponde con una semplice stringa.
+
+Struttura del package:
+- controller/ -> gestisce la richiesta HTTP verso il servizio esterno
+- service/    -> costruisce la richiesta HTTP (con HttpClient) e restituisce la risposta
+- config/     -> contiene ExternalServiceConfig, che inietta l'endpoint dal file application.properties
+
+Tecnologie e tecniche usate:
+- @Value per leggere l'endpoint dal file di configurazione
+- HttpClient per effettuare la chiamata HTTP
+- Separazione in package per mantenere chiara e modulare l'integrazione
+- Test via Postman con chiamata GET da localhost:8080 a localhost:8081
+
+Risultato attuale:
+La TaskApp comunica correttamente con l'app esterna e riceve la risposta "You're doing great!".
