@@ -25,6 +25,7 @@ public class TaskController {
     //Restituisce tutte le task
     @GetMapping
     public ResponseEntity<List<TaskDTO>> getAllTasks () {
+
         return ResponseEntity.ok(taskService.getTasks());
     }
 

@@ -11,7 +11,15 @@ public class TaskDTO {
     private boolean completed;
 
 
+    public TaskDTO(Long id, String title, String description, LocalDate dueDate, boolean completed) {
+        this.id = id;
+        this.title = title;
+        this.description = description;
+        this.dueDate = dueDate;
+        this.completed = completed;
+    }
 
+    // Default constructor
     public TaskDTO() {};
 
 

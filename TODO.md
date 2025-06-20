@@ -19,11 +19,11 @@ Questa lista tiene traccia delle attività da svolgere, dei miglioramenti futuri
 ---
 
 ## 🚧 Task in corso
+- [ ] Aggiungere l'entity 'User'
 
 ---
 
 ## 💡 Miglioramenti futuri
-- [ ] Aggiungere l'entity 'User'
 - [ ] Verifica e test con Postman
 - [ ] Implementare `LOGGER` nei service/controller
 - [ ] Simulare chiamate HTTP esterne con **WireMock**
