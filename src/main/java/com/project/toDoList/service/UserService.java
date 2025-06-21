@@ -28,5 +28,33 @@ public class UserService {
                 .collect(Collectors.toList());
     }
 
+    public UserDTO getUserById(Long id) {
+        User user = userRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("User not found"));
+        return UserMapper.toDto(user);
+    }
+
+    public UserDTO createUser(UserDTO userDTO) {
+        User user = UserMapper.toEntity(userDTO);
+        User savedUser = userRepository.save(user);
+        return UserMapper.toDto(savedUser);
+    }
+
+    public UserDTO updateUser(Long id, UserDTO userDTO) {
+        User user = userRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("User not found"));
+        user.setUsername(userDTO.getUsername());
+        user.setEmail(userDTO.getEmail());
+      //user.setPassword(userDTO.getPassword()); // Password should not be updated through DTO
+        User updatedUser = userRepository.save(user);
+        return UserMapper.toDto(updatedUser);
+    }
+
+    public void deleteUser(Long id) {
+        User user = userRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("User not found"));
+        userRepository.delete(user);
+    }
+
 
 }
