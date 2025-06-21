@@ -1,5 +1,6 @@
 package com.project.toDoList.controller;
 
+import com.project.toDoList.dto.UserCreateWithPasswordDTO;
 import com.project.toDoList.dto.UserDTO;
 import com.project.toDoList.model.User;
 import com.project.toDoList.service.UserService;
@@ -33,7 +34,7 @@ public class UserController {
     }
 
     @PostMapping
-    public ResponseEntity<UserDTO> createUser(UserDTO userDTO) {
+    public ResponseEntity<UserCreateWithPasswordDTO> createUser(UserCreateWithPasswordDTO userDTO) {
         return ResponseEntity.ok(userService.createUser(userDTO));
     }
 

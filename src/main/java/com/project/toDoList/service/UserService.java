@@ -1,9 +1,13 @@
 package com.project.toDoList.service;
 
+import com.project.toDoList.dto.UserCreateWithPasswordDTO;
 import com.project.toDoList.dto.UserDTO;
 import com.project.toDoList.mapper.UserMapper;
+import com.project.toDoList.mapper.UserWithPasswordMapper;
 import com.project.toDoList.model.User;
+import com.project.toDoList.passwordEncoder.PasswordEncoderConfig;
 import com.project.toDoList.repository.UserRepository;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,12 +18,12 @@ import java.util.stream.Collectors;
 public class UserService {
 
     private final UserRepository userRepository;
-    // Constructor injection
-    public UserService(UserRepository userRepository) {
+    private final PasswordEncoder passwordEncoderConfig;
+
+    public UserService(UserRepository userRepository, PasswordEncoder passwordEncoderConfig) {
         this.userRepository = userRepository;
+        this.passwordEncoderConfig = passwordEncoderConfig;
     }
-
-
 
     public List<UserDTO> getAllUsers() {
         List<User> users = userRepository.findAll();
@@ -34,10 +38,11 @@ public class UserService {
         return UserMapper.toDto(user);
     }
 
-    public UserDTO createUser(UserDTO userDTO) {
-        User user = UserMapper.toEntity(userDTO);
+    public UserCreateWithPasswordDTO createUser(UserCreateWithPasswordDTO userDTO) {
+        User user = UserWithPasswordMapper.toEntity(userDTO);
+        user.setPassword(passwordEncoderConfig.encode(user.getPassword()));
         User savedUser = userRepository.save(user);
-        return UserMapper.toDto(savedUser);
+        return UserWithPasswordMapper.toDto(savedUser);
     }
 
     public UserDTO updateUser(Long id, UserDTO userDTO) {

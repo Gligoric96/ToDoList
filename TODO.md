@@ -13,13 +13,14 @@ Questa lista tiene traccia delle attività da svolgere, dei miglioramenti futuri
 - [x] Implementato `GlobalExceptionHandler` con `@RestControllerAdvice`
 - [x] Dockerizzazione del progetto (per ora su branch a parte)
 - [x] Utilizzare `@Value` per endpoint esterni (vedi branch feature/externalService)
+- [X] Aggiungere l'entity 'User'
+
 
 
 
 ---
 
 ## 🚧 Task in corso
-- [ ] Aggiungere l'entity 'User'
 
 ---
 
