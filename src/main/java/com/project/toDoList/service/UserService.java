@@ -5,7 +5,6 @@ import com.project.toDoList.dto.UserDTO;
 import com.project.toDoList.mapper.UserMapper;
 import com.project.toDoList.mapper.UserWithPasswordMapper;
 import com.project.toDoList.model.User;
-import com.project.toDoList.passwordEncoder.PasswordEncoderConfig;
 import com.project.toDoList.repository.UserRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -18,12 +17,17 @@ import java.util.stream.Collectors;
 public class UserService {
 
     private final UserRepository userRepository;
-    private final PasswordEncoder passwordEncoderConfig;
+    private final PasswordEncoder passwordEncoder;
 
-    public UserService(UserRepository userRepository, PasswordEncoder passwordEncoderConfig) {
+    public UserService(UserRepository userRepository, PasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
-        this.passwordEncoderConfig = passwordEncoderConfig;
+        this.passwordEncoder = passwordEncoder;
     }
+
+
+
+
+
 
     public List<UserDTO> getAllUsers() {
         List<User> users = userRepository.findAll();
@@ -40,7 +44,7 @@ public class UserService {
 
     public UserCreateWithPasswordDTO createUser(UserCreateWithPasswordDTO userDTO) {
         User user = UserWithPasswordMapper.toEntity(userDTO);
-        user.setPassword(passwordEncoderConfig.encode(user.getPassword()));
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
         User savedUser = userRepository.save(user);
         return UserWithPasswordMapper.toDto(savedUser);
     }
