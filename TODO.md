@@ -22,13 +22,22 @@ Questa lista tiene traccia delle attività da svolgere, dei miglioramenti futuri
 
 ## 🚧 Task in corso
 
+
 ---
 
 ## 💡 Miglioramenti futuri
-- [ ] Verifica e test con Postman
+
+- [ ] Creare una @Post per ricerca avanzata di Task e User e implementare `@RequestBody` per i filtri
+
+- [ ] Personalizzare serializzazione JSON con `@JsonProperty`
+- [ ] Aggiungere `@JsonIgnoreProperties` per evitare serializzazione ciclica
+- 
+- [ ] Implementare `@Transactional` per le operazioni di scrittura
+
 - [ ] Implementare `LOGGER` nei service/controller
 - [ ] Simulare chiamate HTTP esterne con **WireMock**
-- [ ] Personalizzare serializzazione JSON con `@JsonProperty`
+
+
 - [ ] Inserire test unitari e test di integrazione
 - [ ] Sviluppare FrontEnd dell'applicativo
 - [ ] Sicurezza (Spring Security)
