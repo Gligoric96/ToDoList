@@ -14,6 +14,7 @@ Questa lista tiene traccia delle attività da svolgere, dei miglioramenti futuri
 - [x] Dockerizzazione del progetto (per ora su branch a parte)
 - [x] Utilizzare `@Value` per endpoint esterni (vedi branch feature/externalService)
 - [X] Aggiungere l'entity 'User'
+- [X] Aggiunto Lombok
 
 
 
@@ -21,11 +22,13 @@ Questa lista tiene traccia delle attività da svolgere, dei miglioramenti futuri
 ---
 
 ## 🚧 Task in corso
-
+- [ ] JUnit testing 
 
 ---
 
 ## 💡 Miglioramenti futuri
+- [ ] Collegare User e Task con una relazione `@ManyToOne` o `@OneToMany`
+
 - [ ] Implementare Page<Task> e Page<User> per paginazione 
 
 - [ ] Creare una @Post per ricerca avanzata di Task e User e implementare `@RequestBody` per i filtri
@@ -39,7 +42,7 @@ Questa lista tiene traccia delle attività da svolgere, dei miglioramenti futuri
 - [ ] Simulare chiamate HTTP esterne con **WireMock**
 
 
-- [ ] Inserire test unitari e test di integrazione
+
 - [ ] Sviluppare FrontEnd dell'applicativo
 - [ ] Sicurezza (Spring Security)
 
