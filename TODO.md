@@ -26,6 +26,7 @@ Questa lista tiene traccia delle attività da svolgere, dei miglioramenti futuri
 ---
 
 ## 💡 Miglioramenti futuri
+- [ ] Implementare Page<Task> e Page<User> per paginazione 
 
 - [ ] Creare una @Post per ricerca avanzata di Task e User e implementare `@RequestBody` per i filtri
 
