@@ -15,6 +15,7 @@ Questa lista tiene traccia delle attività da svolgere, dei miglioramenti futuri
 - [x] Utilizzare `@Value` per endpoint esterni (vedi branch feature/externalService)
 - [X] Aggiungere l'entity 'User'
 - [X] Aggiunto Lombok
+- [X] Aggiunta configurazione per TiDB (DB remoto)
 
 
 
