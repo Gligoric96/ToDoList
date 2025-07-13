@@ -2,6 +2,8 @@ package com.project.toDoList.model;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 
 @Entity
 @Builder
@@ -14,11 +16,15 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    String username;
-    String password;
-    String email;
+    @Column(name = "username", nullable = false, unique = true)
+    private String username;
+    @Column(name = "password", nullable = false)
+    private String password;
+    @Column(name = "email", nullable = false, unique = true)
+    private String email;
 
-
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Task> tasks;
 
 
 //    @Override

@@ -20,10 +20,18 @@ public class Task {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "title", nullable = false)
     private String title;
+    @Column(name = "description")
     private String description;
+    @Column(name = "due_date")
     private LocalDate dueDate;
+    @Column(name = "completed", nullable = false)
     private boolean completed;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
 
 
 

@@ -16,7 +16,7 @@ Questa lista tiene traccia delle attività da svolgere, dei miglioramenti futuri
 - [X] Aggiungere l'entity 'User'
 - [X] Aggiunto Lombok
 - [X] Aggiunta configurazione per TiDB (DB remoto)
-
+- [X] Collegare User e Task con una relazione `@ManyToOne` o `@OneToMany`
 
 
 
@@ -28,8 +28,6 @@ Questa lista tiene traccia delle attività da svolgere, dei miglioramenti futuri
 ---
 
 ## 💡 Miglioramenti futuri
-- [ ] Collegare User e Task con una relazione `@ManyToOne` o `@OneToMany`
-
 - [ ] Implementare Page<Task> e Page<User> per paginazione 
 
 - [ ] Creare una @Post per ricerca avanzata di Task e User e implementare `@RequestBody` per i filtri
