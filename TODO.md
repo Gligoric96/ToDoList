@@ -23,11 +23,20 @@ Questa lista tiene traccia delle attività da svolgere, dei miglioramenti futuri
 ---
 
 ## 🚧 Task in corso
+
+    //TODO!!!
+- [ ] Creata la relazione tra le entity ora vanno gestiti i service 
+    Apri queste finestre chrome: 
+    Chat: https://chatgpt.com/g/g-p-68287bcc2d5481919e06a1ba628b1eca-progetto-task/c/68739a54-340c-800d-bba7-dd047578e0b0
+    TiDB: https://tidbcloud.com/clusters/10522434590372284509/sqleditor?orgId=1372813089209270714&projectId=1372813089454588489
+    Swagger: http://localhost:8080/swagger-ui/index.html#/task-controller/createTask
+
 - [ ] JUnit testing 
 
 ---
 
 ## 💡 Miglioramenti futuri
+
 - [ ] Implementare Page<Task> e Page<User> per paginazione 
 
 - [ ] Creare una @Post per ricerca avanzata di Task e User e implementare `@RequestBody` per i filtri

@@ -1,6 +1,7 @@
 package com.project.toDoList.controller;
 
 import com.project.toDoList.dto.TaskDTO;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -8,6 +9,7 @@ import com.project.toDoList.service.TaskService;
 
 import java.util.List;
 
+@Slf4j
 @RestController
 @RequestMapping("/tasks")
 public class TaskController {
@@ -28,6 +30,15 @@ public class TaskController {
 
         return ResponseEntity.ok(taskService.getTasks());
     }
+
+    //Restituisce tutte le task di un User
+    @GetMapping({"/user/{userId}"})
+    public ResponseEntity<List<TaskDTO>> getAllUserTasks (@PathVariable Long id){
+
+        List<TaskDTO> tasks = taskService.getTaskByUserId(id);
+        return ResponseEntity.ok(tasks);
+    }
+
 
     //Restituisce le task tramite id
     @GetMapping("/{id}")
