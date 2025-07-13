@@ -29,6 +29,9 @@ public class Task {
     @Column(name = "completed", nullable = false)
     private boolean completed;
 
+    @Column(name = "user_id", insertable = false, updatable = false)
+    private Long userId; // Optional, if you want to include user information
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
     private User user;

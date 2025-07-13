@@ -9,23 +9,23 @@ public class UserWithPasswordMapper {
         if (user == null) {
             return null;
         }
-        UserCreateWithPasswordDTO dto = new UserCreateWithPasswordDTO();
-        dto.setId(user.getId());
-        dto.setUsername(user.getUsername());
-        dto.setPassword(user.getPassword());
-        dto.setEmail(user.getEmail());
-        return dto;
+        return UserCreateWithPasswordDTO.builder()
+                .id(user.getId())
+                .username(user.getUsername())
+                .password(user.getPassword())
+                .email(user.getEmail())
+                .build();
     }
 
     public static User toEntity(UserCreateWithPasswordDTO dto) {
         if (dto == null) {
             return null;
         }
-        User user = new User();
-        user.setId(dto.getId());
-        user.setUsername(dto.getUsername());
-        user.setPassword(dto.getPassword());
-        user.setEmail(dto.getEmail());
-        return user;
+        return User.builder()
+                .id(dto.getId())
+                .username(dto.getUsername())
+                .password(dto.getPassword())
+                .email(dto.getEmail())
+                .build();
     }
 }

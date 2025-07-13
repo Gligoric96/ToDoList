@@ -1,7 +1,14 @@
 package com.project.toDoList.dto;
 
+import lombok.*;
+
 import java.time.LocalDate;
 
+@Builder
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class TaskDTO {
 
     private Long id;
@@ -9,63 +16,6 @@ public class TaskDTO {
     private String description;
     private LocalDate dueDate;
     private boolean completed;
+    private Long userId; // Optional, if you want to include user information
 
-
-    public TaskDTO(Long id, String title, String description, LocalDate dueDate, boolean completed) {
-        this.id = id;
-        this.title = title;
-        this.description = description;
-        this.dueDate = dueDate;
-        this.completed = completed;
-    }
-
-    // Default constructor
-    public TaskDTO() {};
-
-
-
-
-
-
-
-    //Getters and Setters
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public LocalDate getDueDate() {
-        return dueDate;
-    }
-
-    public void setDueDate(LocalDate dueDate) {
-        this.dueDate = dueDate;
-    }
-
-    public boolean isCompleted() {
-        return completed;
-    }
-
-    public void setCompleted(boolean completed) {
-        this.completed = completed;
-    }
 }
