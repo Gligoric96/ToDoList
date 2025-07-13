@@ -15,7 +15,8 @@ public class TaskDTO {
     private String title;
     private String description;
     private LocalDate dueDate;
-    private boolean completed;
+    @Builder.Default //per forzare il campo a false per swagger e lombok
+    private boolean completed = false;
     private Long userId; // Optional, if you want to include user information
 
 }

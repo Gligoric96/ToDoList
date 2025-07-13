@@ -27,10 +27,7 @@ public class Task {
     @Column(name = "due_date")
     private LocalDate dueDate;
     @Column(name = "completed", nullable = false)
-    private boolean completed;
-
-    @Column(name = "user_id", insertable = false, updatable = false)
-    private Long userId; // Optional, if you want to include user information
+    private boolean completed = false;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
