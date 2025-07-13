@@ -33,9 +33,9 @@ public class TaskController {
 
     //Restituisce tutte le task di un User
     @GetMapping({"/user/{userId}"})
-    public ResponseEntity<List<TaskDTO>> getAllUserTasks (@PathVariable Long id){
+    public ResponseEntity<List<TaskDTO>> getAllUserTasks (@PathVariable Long userId){
 
-        List<TaskDTO> tasks = taskService.getTaskByUserId(id);
+        List<TaskDTO> tasks = taskService.getTaskByUserId(userId);
         return ResponseEntity.ok(tasks);
     }
 
